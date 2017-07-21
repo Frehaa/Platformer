@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWallgrab : PlayerState
+namespace Legacy { 
+    public class PlayerWallgrab : PlayerState
 {
     private float horDirection;
     private bool drop;
@@ -40,4 +41,5 @@ public class PlayerWallgrab : PlayerState
         if (collisionTracker.Down)
             player.State = new PlayerIdle(player);
     }
+}
 }

@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+namespace Legacy {
+    public class Player : MonoBehaviour {
 
     private PlayerState state;
     
@@ -75,4 +76,5 @@ public class Player : MonoBehaviour {
     /* End region*/ 
 
 
+}
 }

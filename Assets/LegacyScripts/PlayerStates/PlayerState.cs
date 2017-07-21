@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+namespace Legacy
+{
 
-public abstract class PlayerState
+    public abstract class PlayerState
 {
     protected Player player;
     protected CollisionTracker collisionTracker;
@@ -52,5 +54,7 @@ public abstract class PlayerState
     }
 
 
+
+}
 
 }

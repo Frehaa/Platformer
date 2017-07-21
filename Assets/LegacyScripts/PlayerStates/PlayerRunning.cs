@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRunning : PlayerGrounded
+namespace Legacy { 
+    public class PlayerRunning : PlayerGrounded
 {
     private float runSpeed;
     private float direction;
@@ -106,4 +107,5 @@ public class PlayerRunning : PlayerGrounded
     {
         return 65f;
     }
+}
 }

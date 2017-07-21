@@ -2,42 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJumping : PlayerAirborne
+namespace Legacy
 {
-    private float time;
-    private float speed;
-    private float jumpTime;
-
-    public PlayerJumping(Player player, float direction = 0f) : base(player, direction)
+    public class PlayerJumping : PlayerAirborne
     {
-        time = 0f;
-        speed = 6f;
-        jumpTime = 1f;
-    }
+        private float time;
+        private float speed;
+        private float jumpTime;
 
-    public override void HandleInput()
-    {
-        bool jump = Input.GetAxisRaw("Jump") == 1;
+        public PlayerJumping(Player player, float direction = 0f) : base(player, direction)
+        {
+            time = 0f;
+            speed = 6f;
+            jumpTime = 1f;
+        }
 
-        if (!jump)
-            player.State = new PlayerFalling(player);
+        public override void HandleInput()
+        {
+            bool jump = Input.GetAxisRaw("Jump") == 1;
 
-        base.HandleInput();
+            if (!jump)
+                player.State = new PlayerFalling(player);
 
-    }
-    public override void Update(float dt)
-    {
-        time += dt;
+            base.HandleInput();
 
-        if (time > jumpTime)
-            player.State = new PlayerFalling(player);
-        else
-            player.SetVerticalVelocity(speed);
+        }
+        public override void Update(float dt)
+        {
+            time += dt;
 
-        base.Update(dt);
+            if (time > jumpTime)
+                player.State = new PlayerFalling(player);
+            else
+                player.SetVerticalVelocity(speed);
 
-        if (collisionTracker.Up)
-            player.State = new PlayerFalling(player);
+            base.Update(dt);
 
+            if (collisionTracker.Up)
+                player.State = new PlayerFalling(player);
+
+        }
     }
 }

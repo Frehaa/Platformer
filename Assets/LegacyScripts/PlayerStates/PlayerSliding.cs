@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+namespace Legacy
+{
 
-public class PlayerSliding : PlayerGrounded
+    public class PlayerSliding : PlayerGrounded
 {
     private float direction;
     private float minSlideSpeed;
@@ -57,4 +59,5 @@ public class PlayerSliding : PlayerGrounded
     {
         throw new NotImplementedException();
     }
+}
 }
